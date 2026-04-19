@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="手术信息管理平台(手麻) - 一体化手术室信息管理解决方案">
+  <meta name="keywords" content="手术信息管理,手麻系统,手术室管理,数字化手术室">
+  <title>手术信息管理平台(手麻) - 闻道知白</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/solution-detail.css">
+  <style>
+    .anesthesia-panel{width:100%;background:linear-gradient(135deg,#134e4a 0%,#0d3d39 100%);border-radius:16px;padding:20px;color:#fff;box-shadow:0 10px 40px rgba(0,0,0,.15)}
+    .anes-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.2)}
+    .anes-header span:first-child{font-size:14px;font-weight:600;color:#5eead4}
+    .anes-time{font-size:11px;color:#5eead4;background:rgba(94,234,212,.2);padding:4px 10px;border-radius:12px}
+    .anes-vitals{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:15px}
+    .anes-vital{text-align:center;padding:10px;background:rgba(255,255,255,.1);border-radius:8px}
+    .anes-vital .label{display:block;font-size:10px;color:rgba(255,255,255,.6);margin-bottom:4px}
+    .anes-vital .value{display:block;font-size:18px;font-weight:700;color:#5eead4}
+    .anes-vital .unit{display:block;font-size:9px;color:rgba(255,255,255,.4)}
+    .anes-drugs{display:flex;flex-direction:column;gap:6px}
+    .drug-item{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(255,255,255,.08);border-radius:6px;font-size:11px}
+    .drug-item .dose{color:rgba(255,255,255,.7)}
+    .drug-item .status{font-size:10px;padding:2px 8px;border-radius:10px;background:rgba(255,255,255,.1)}
+    .drug-item .status.active{background:rgba(94,234,212,.3);color:#5eead4}
+  </style>
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="header" id="main-header"></header>
+<script src="../../js/nav-component.js"></script>
+
+<section class="page-banner" style="background-image:url('../../images/solutions-detail/手术信息管理平台(手麻).jpg');background-size:cover;background-position:center"></section>
+
+<div class="breadcrumb" data-title="手术信息管理平台(手麻)"></div>
+
+<section class="tech-section">
+  <div class="container">
+    <div class="tech-header">
+      <h2>手术信息管理平台(手麻)</h2>
+      <p>一体化手术室是通过现代科技手段将传统手术室相关的信息系统、医疗设备及公共设施等进行全面整合的综合开放式平台，包含音视频平台、信息管理平台和设备监控平台。</p>
+    </div>
+    <div class="topo-diagram">
+      <div class="topo-container">
+        <svg class="topo-lines" viewBox="0 0 900 400">
+          <path class="topo-line input" d="M150,180 Q300,180 405,200"/>
+          <path class="topo-line output" d="M495,200 Q600,180 750,180"/>
+          <path class="topo-line" d="M350,250 L200,340"/>
+          <path class="topo-line" d="M550,250 L700,340"/>
+        </svg>
+        <div class="topo-center">
+          <div class="topo-core">
+            <div class="topo-core-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.66 9-3V5"/></svg></div>
+            <div class="topo-core-title">手术信息服务器</div>
+            <div class="topo-core-desc">排班·记录·交互</div>
+          </div>
+        </div>
+        <div class="topo-group-label left">数据源</div>
+        <div class="topo-node left">
+          <div class="topo-node-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>HIS系统</div>
+          <div class="topo-node-desc">患者信息·医嘱同步</div>
+        </div>
+        <div class="topo-group-label right">显示端</div>
+        <div class="topo-node right">
+          <div class="topo-node-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>公告大屏</div>
+          <div class="topo-node-desc">手术状态·家属等待</div>
+        </div>
+        <div class="topo-node bottom-left">
+          <div class="topo-node-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>手术排班</div>
+          <div class="topo-node-desc">拖拉排班·错误检查</div>
+        </div>
+        <div class="topo-node bottom-right">
+          <div class="topo-node-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>体征采集</div>
+          <div class="topo-node-desc">监护设备·自动记录</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="module-section">
+  <div class="container">
+    <div class="module-block">
+      <div class="module-content">
+        <span class="module-tag">核心功能</span>
+        <h3>一体化信息管理</h3>
+        <p>术前医护人员无需调整医疗设备硬件，即可轻松快捷获取病人信息。术中音视频平台实现远程医疗，通过信息管理平台实时获取病人信息，做到精确诊断。</p>
+        <div class="module-features">
+          <div class="module-feature-item"><div class="check-icon"></div><span>术前信息管理</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>手术排班</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>医护患协同</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>术后记录</span></div>
+        </div>
+      </div>
+      <div class="module-image"><img loading="lazy" src="../../images/products/手术信息公告屏.jpg" alt="手术信息公告屏"></div>
+    </div>
+    <div class="module-block">
+      <div class="module-content">
+        <span class="module-tag">麻醉管理</span>
+        <h3>麻醉信息记录</h3>
+        <p>完整记录麻醉过程，包括麻醉用药、生命体征、麻醉深度等关键数据，支持麻醉评分和术后随访管理。</p>
+        <div class="module-features">
+          <div class="module-feature-item"><div class="check-icon"></div><span>麻醉用药记录</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>生命体征采集</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>麻醉评分</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>术后随访</span></div>
+        </div>
+      </div>
+      <div class="module-image">
+        <div class="anesthesia-panel">
+          <div class="anes-header"><span>麻醉记录单</span><span class="anes-time">手术中 02:35:18</span></div>
+          <div class="anes-vitals">
+            <div class="anes-vital"><span class="label">心率</span><span class="value">72</span><span class="unit">bpm</span></div>
+            <div class="anes-vital"><span class="label">血压</span><span class="value">110/70</span><span class="unit">mmHg</span></div>
+            <div class="anes-vital"><span class="label">血氧</span><span class="value">98</span><span class="unit">%</span></div>
+            <div class="anes-vital"><span class="label">麻醉深度</span><span class="value">45</span><span class="unit">BIS</span></div>
+          </div>
+          <div class="anes-drugs">
+            <div class="drug-item"><span>丙泊酚</span><span class="dose">200mg/h</span><span class="status active">输注中</span></div>
+            <div class="drug-item"><span>瑞芬太尼</span><span class="dose">0.2μg/kg/min</span><span class="status active">输注中</span></div>
+            <div class="drug-item"><span>罗库溴铵</span><span class="dose">50mg</span><span class="status">已给予</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="scene-video" data-src="../../videos/scenarios/手术信息管理平台(手麻) 场景展示.mp4"></div>
+
+<section class="page-nav">
+  <div class="container">
+    <div class="page-nav-inner">
+      <a href="monitoring.html" class="page-nav-item prev"><span class="page-nav-arrow">←</span><div class="page-nav-text"><span class="page-nav-label">上一个</span><span class="page-nav-title">手术室集中控制系统</span></div></a>
+      <div class="page-nav-placeholder"></div>
+    </div>
+  </div>
+</section>
+
+<section class="products-section">
+  <div class="container">
+    <div class="section-title"><h2>相关产品</h2><p>手术信息管理平台核心组件</p></div>
+    <div class="products-grid">
+      <div class="product-card"><div class="product-image"><img loading="lazy" src="../../images/products/手术信息公告屏.jpg" alt="手术信息公告屏"></div><h4 class="product-name">手术信息公告屏</h4></div>
+      <div class="product-card"><div class="product-image"><img loading="lazy" src="../../images/products/手术室门口机.jpg" alt="手术室门口机"></div><h4 class="product-name">手术室门口机</h4></div>
+      <div class="product-card"><div class="product-image"><img loading="lazy" src="../../images/products/示教主控屏.jpg" alt="主控屏"></div><h4 class="product-name">主控屏</h4></div>
+      <div class="product-card"><div class="product-image"><img loading="lazy" src="../../images/products/护士工作站.jpg" alt="护士工作站"></div><h4 class="product-name">护士工作站</h4></div>
+    </div>
+  </div>
+</section>
+
+<div id="main-footer"></div>
+<script src="../../js/footer-component.js"></script>
+<script src="../../js/products-data.js"></script>
+<script src="../../js/cases-data.js"></script>
+<script src="../../js/main.js"></script>
+</body>
+</html>

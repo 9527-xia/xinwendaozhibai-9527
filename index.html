@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="闻道知白 - 医院智能化解决方案专家，专注于医院智能化医疗专项、医院净化、医院信息化整体解决方案">
+  <meta name="keywords" content="闻道知白,医院智能化,医院净化,医院信息化,ICU探视,数字化手术室,HIS系统">
+  <meta property="og:title" content="闻道知白 - 医院智能化解决方案专家">
+  <meta property="og:description" content="专注于医院智能化医疗专项、医院净化、医院信息化整体解决方案">
+  <meta property="og:type" content="website">
+  <title>闻道知白 - 医院智能化解决方案专家</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<!-- 顶部导航 - 使用组件 -->
+<header class="header" id="main-header"></header>
+<script src="js/nav-component.js"></script>
+
+<!-- Hero 轮播区域 - 3D立方体粒子飘散 -->
+<section class="hero-slider">
+  <!-- 动态背景 -->
+  <div class="bg-image"></div>
+
+  <!-- 分屏开场 -->
+  <div class="intro" id="intro">
+    <div class="split-screen split-left"></div>
+    <div class="split-screen split-right"></div>
+    <div class="center-line"></div>
+  </div>
+
+  <!-- 3D立方体轮播 -->
+  <div class="cube-container" id="cubeContainer">
+    <div class="cube-wrapper" id="cubeWrapper"></div>
+    <div class="orbit-particles" id="orbitParticles"></div>
+  </div>
+
+  <div id="seedsContainer"></div>
+
+  <!-- 结束分屏 -->
+  <div class="outro" id="outro">
+    <div class="outro-split left">
+      <img loading="lazy" src="images/home/outro-1.jpg" alt="智慧医疗场景展示">
+    </div>
+    <div class="outro-split right">
+      <img loading="lazy" src="images/home/outro-2.jpg" alt="数字化手术室场景">
+    </div>
+    <div class="outro-line"></div>
+  </div>
+</section>
+
+<!-- 核心业务区 -->
+<section class="business">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Solutions</p>
+      <h2 class="section-title">解决方案</h2>
+      <p class="section-desc">智慧手术室综合解决方案<br>提升医疗服务质量与效率</p>
+    </div>
+
+    <div class="solutions-grid">
+      <a href="solutions/smart/digital-or.html" class="solution-card">
+        <div class="card-image">
+          <video autoplay loop muted playsinline preload="none" src="images/solutions-detail/数字化手术系统.mp4"></video>
+        </div>
+        <div class="card-content">
+          <span class="card-tag">智能化</span>
+          <h3 class="card-title">数字化手术系统</h3>
+          <p class="card-desc">集成手术室设备管理、影像传输、远程会诊等功能</p>
+          <span class="card-link">
+            查看详情
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="solutions/smart/remote-consultation.html" class="solution-card">
+        <div class="card-image">
+          <video autoplay loop muted playsinline preload="none" src="images/solutions-detail/远程会诊系统.mp4"></video>
+        </div>
+        <div class="card-content">
+          <span class="card-tag">智能化</span>
+          <h3 class="card-title">远程会诊系统</h3>
+          <p class="card-desc">高清视频会诊、多方协作、数据共享</p>
+          <span class="card-link">
+            查看详情
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="solutions/smart/mobile-teaching.html" class="solution-card">
+        <div class="card-image">
+          <video autoplay loop muted playsinline preload="none" src="images/solutions-detail/移动示教系统.mp4"></video>
+        </div>
+        <div class="card-content">
+          <span class="card-tag">智能化</span>
+          <h3 class="card-title">移动示教系统</h3>
+          <p class="card-desc">移动示教车、无线传输、多终端观看</p>
+          <span class="card-link">
+            查看详情
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="solutions/smart/operation-teaching.html" class="solution-card">
+        <div class="card-image">
+          <video autoplay loop muted playsinline preload="none" src="images/solutions-detail/手术示教系统.mp4"></video>
+        </div>
+        <div class="card-content">
+          <span class="card-tag">智能化</span>
+          <h3 class="card-title">手术示教系统</h3>
+          <p class="card-desc">术野摄像机、全景摄像、示教直播</p>
+          <span class="card-link">
+            查看详情
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 产品区 -->
+<section class="products">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Products</p>
+      <h2 class="section-title">热门产品</h2>
+      <p class="section-desc">精选高品质医疗设备与系统，满足各类医疗场景需求</p>
+    </div>
+
+    <div class="products-grid home-grid">
+      <a href="products/index.html?cat=teach" class="product-card">
+        <div class="product-image">
+          <img loading="lazy" src="images/products/手术示教移动推车.jpg" alt="手术示教移动推车">
+          <span class="product-tag">智能化</span>
+        </div>
+        <div class="product-content">
+          <h3 class="product-name">手术示教移动推车</h3>
+          <p class="product-desc">移动式手术示教设备，集成摄像、编码、传输功能，灵活部署于各手术室</p>
+        </div>
+      </a>
+
+      <a href="products/index.html?cat=teach" class="product-card">
+        <div class="product-image">
+          <img loading="lazy" src="images/products/手术示教4K医用术野摄像机.jpg" alt="4K医用术野摄像机">
+          <span class="product-tag">智能化</span>
+        </div>
+        <div class="product-content">
+          <h3 class="product-name">4K医用术野摄像机</h3>
+          <p class="product-desc">4K超高清术野摄像，真实还原手术细节，支持光学变焦与自动对焦</p>
+        </div>
+      </a>
+
+      <a href="products/index.html?cat=tencent" class="product-card">
+        <div class="product-image">
+          <img loading="lazy" src="images/products/腾讯云智能数智人.jpg" alt="腾讯云智能数智人">
+          <span class="product-tag">信息化</span>
+        </div>
+        <div class="product-content">
+          <h3 class="product-name">腾讯云智能数智人</h3>
+          <p class="product-desc">AI驱动的虚拟数字人，支持智能导诊、健康咨询、医患互动等场景</p>
+        </div>
+      </a>
+
+      <a href="products/index.html?cat=digital" class="product-card">
+        <div class="product-image">
+          <img loading="lazy" src="images/products/数字化手术室主机.jpg" alt="数字化手术室主机">
+          <span class="product-tag">智能化</span>
+        </div>
+        <div class="product-content">
+          <h3 class="product-name">数字化手术室主机</h3>
+          <p class="product-desc">手术室核心控制设备，集成视频处理、设备控制、数据管理于一体</p>
+        </div>
+      </a>
+
+      <a href="products/index.html?cat=behavior" class="product-card">
+        <div class="product-image">
+          <img loading="lazy" src="images/products/智能更衣柜.jpg" alt="智能更衣柜">
+          <span class="product-tag">智能化</span>
+        </div>
+        <div class="product-content">
+          <h3 class="product-name">智能更衣柜</h3>
+          <p class="product-desc">智能指纹/人脸识别，手术人员更衣管理，支持追溯记录</p>
+        </div>
+      </a>
+
+      <a href="products/index.html?cat=nurse" class="product-card">
+        <div class="product-image">
+          <img loading="lazy" src="images/products/护士工作站.jpg" alt="护士工作站">
+          <span class="product-tag">智能化</span>
+        </div>
+        <div class="product-content">
+          <h3 class="product-name">护士工作站</h3>
+          <p class="product-desc">护士站信息管理终端，呼叫处理、信息显示、数据统计</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="section-more">
+      <a href="products/index.html" class="btn btn-more">
+        查看更多产品
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div id="main-footer"></div>
+<script src="js/footer-component.js"></script>
+
+<script src="js/products-data.js"></script>
+<script src="js/cases-data.js"></script>
+<script src="js/solutions-data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/cube-slider.js"></script>
+</body>
+</html>

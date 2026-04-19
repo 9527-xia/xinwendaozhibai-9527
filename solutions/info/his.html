@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="医院体检报告解读系统 - AI智能体检报告分析解读">
+  <meta name="keywords" content="体检报告解读,报告解读系统,AI健康分析">
+  <title>医院体检报告解读系统 - 闻道知白</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/solution-detail.css">
+  <style>
+    .ai-report-panel{width:100%;background:linear-gradient(135deg,#4c1d95 0%,#5b21b6 100%);border-radius:16px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.15)}
+    .ai-report-panel .report-header{display:flex;align-items:center;gap:10px;padding:14px 16px;background:rgba(0,0,0,.2);color:#fff}
+    .ai-badge{background:linear-gradient(135deg,#818cf8,#a78bfa);padding:4px 10px;border-radius:12px;font-size:10px;font-weight:600}
+    .report-items{padding:16px;display:flex;flex-direction:column;gap:8px}
+    .report-item{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(255,255,255,.1);border-radius:8px;color:#fff;font-size:12px}
+    .report-item.warning{border-left:3px solid #fbbf24}
+    .report-item.normal{border-left:3px solid #34d399}
+    .item-name{flex:1}
+    .item-value{font-weight:600}
+    .item-status{font-size:10px;padding:2px 8px;border-radius:10px;margin-left:8px}
+    .report-item.warning .item-status{background:rgba(251,191,36,.3);color:#fbbf24}
+    .report-item.normal .item-status{background:rgba(52,211,153,.3);color:#34d399}
+    .ai-suggestion{display:flex;align-items:center;gap:10px;padding:12px 16px;background:rgba(0,0,0,.2);color:#fff;font-size:11px}
+    .suggestion-icon{font-size:16px}
+  </style>
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="header" id="main-header"></header>
+<script src="../../js/nav-component.js"></script>
+
+<section class="page-banner" style="background-image:url('../../images/solutions-detail/医院体检报告.jpg');background-size:cover;background-position:center"></section>
+
+<div class="breadcrumb" data-title="医院体检报告解读系统"></div>
+
+<section class="tech-section">
+  <div class="container">
+    <div class="tech-header">
+      <h2>医院体检报告解读系统</h2>
+      <p>通过AI智能分析技术，帮助患者更好地理解体检报告中的各项指标，提供专业的健康建议和解读服务，结合线上问诊功能，让健康管理更加便捷高效。</p>
+    </div>
+    <div class="topo-diagram">
+      <div class="topo-container">
+        <svg class="topo-lines" viewBox="0 0 900 400">
+          <path class="topo-line" d="M150,180 Q300,180 405,200"/>
+          <path class="topo-line" d="M495,200 Q600,180 750,180"/>
+          <path class="topo-line" d="M350,250 L200,340"/>
+          <path class="topo-line" d="M550,250 L700,340"/>
+        </svg>
+        <div class="topo-center">
+          <div class="topo-core">
+            <div class="topo-core-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></div>
+            <div class="topo-core-title">AI解读平台</div>
+            <div class="topo-core-desc">分析·解读·建议</div>
+          </div>
+        </div>
+        <div class="topo-group-label left">数据源</div>
+        <div class="topo-node left">
+          <div class="topo-node-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>体检报告</div>
+          <div class="topo-node-desc">OCR识别·数据提取</div>
+        </div>
+        <div class="topo-group-label right">服务端</div>
+        <div class="topo-node right">
+          <div class="topo-node-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>医生在线</div>
+          <div class="topo-node-desc">专业解读·健康咨询</div>
+        </div>
+        <div class="topo-node bottom-left">
+          <div class="topo-node-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>患者端</div>
+          <div class="topo-node-desc">扫码上传·报告查询</div>
+        </div>
+        <div class="topo-node bottom-right">
+          <div class="topo-node-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>健康档案</div>
+          <div class="topo-node-desc">数据存储·趋势分析</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="module-section">
+  <div class="container">
+    <div class="module-block">
+      <div class="module-content">
+        <span class="module-tag">核心功能</span>
+        <h3>智能体检报告解读</h3>
+        <p>将云计算、云存储、视频云及AI等先进技术引入到方案中，支持多方协同协作问诊，提供在线报告单解读、用药指导、护理指导和康复指导。</p>
+        <div class="module-features">
+          <div class="module-feature-item"><div class="check-icon"></div><span>预约缴费</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>AI解读</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>在线问诊</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>康复指导</span></div>
+        </div>
+      </div>
+      <div class="module-image"><img loading="lazy" src="../../images/products/腾讯云智能数智人.jpg" alt="AI解读系统"></div>
+    </div>
+    <div class="module-block">
+      <div class="module-content">
+        <span class="module-tag">AI赋能</span>
+        <h3>智能报告解读</h3>
+        <p>基于AI技术对体检报告进行智能分析，自动识别异常指标，生成个性化健康建议，帮助患者更好理解体检结果。</p>
+        <div class="module-features">
+          <div class="module-feature-item"><div class="check-icon"></div><span>异常指标识别</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>趋势对比分析</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>健康建议生成</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>专科推荐</span></div>
+        </div>
+      </div>
+      <div class="module-image">
+        <div class="ai-report-panel">
+          <div class="report-header"><span class="ai-badge">AI分析</span><span>体检报告解读</span></div>
+          <div class="report-items">
+            <div class="report-item warning"><span class="item-name">血糖</span><span class="item-value">7.2 mmol/L</span><span class="item-status">偏高</span></div>
+            <div class="report-item warning"><span class="item-name">甘油三酯</span><span class="item-value">2.4 mmol/L</span><span class="item-status">偏高</span></div>
+            <div class="report-item normal"><span class="item-name">总胆固醇</span><span class="item-value">4.8 mmol/L</span><span class="item-status">正常</span></div>
+          </div>
+          <div class="ai-suggestion"><span class="suggestion-icon">💡</span><span>建议：注意饮食控制，增加运动，建议复查血糖</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="scene-video" data-src="../../videos/scenarios/医院体检报告解读系统  场景展示.mp4"></div>
+
+<section class="page-nav">
+  <div class="container">
+    <div class="page-nav-inner">
+      <a href="emr.html" class="page-nav-item prev"><span class="page-nav-arrow">←</span><div class="page-nav-text"><span class="page-nav-label">上一个</span><span class="page-nav-title">互联网医院系统</span></div></a>
+      <a href="icu-info.html" class="page-nav-item next"><div class="page-nav-text"><span class="page-nav-label">下一个</span><span class="page-nav-title">ICU信息管理系统</span></div><span class="page-nav-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="products-section">
+  <div class="container">
+    <div class="section-title"><h2>相关产品</h2><p>医院体检报告解读系统配套产品</p></div>
+    <div class="products-grid">
+      <div class="product-card"><div class="product-image"><img loading="lazy" src="../../images/products/腾讯云智能数智人.jpg" alt="AI解读系统"></div><h4 class="product-name">AI解读系统</h4></div>
+      <div class="product-card"><div class="product-image"><img loading="lazy" src="../../images/products/护士工作站.jpg" alt="护士工作站"></div><h4 class="product-name">护士工作站</h4></div>
+      <div class="product-card"><div class="product-image"><img loading="lazy" src="../../images/products/手术信息公告屏.jpg" alt="报告打印终端"></div><h4 class="product-name">报告打印终端</h4></div>
+      <div class="product-card"><div class="product-image"><img loading="lazy" src="../../images/products/手持PAD扫码枪.jpg" alt="扫码终端"></div><h4 class="product-name">扫码终端</h4></div>
+    </div>
+  </div>
+</section>
+
+<div id="main-footer"></div>
+<script src="../../js/footer-component.js"></script>
+<script src="../../js/products-data.js"></script>
+<script src="../../js/cases-data.js"></script>
+<script src="../../js/main.js"></script>
+</body>
+</html>

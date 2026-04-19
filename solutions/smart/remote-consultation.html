@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="远程会诊系统 - 跨地域医疗会诊解决方案">
+  <meta name="keywords" content="远程会诊,远程医疗,视频会诊,跨院会诊">
+  <title>远程会诊系统 - 闻道知白</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/solution-detail.css">
+  <style>
+    .topo-diagram{max-width:1000px}
+    .topo-container{min-height:380px}
+    .topo-center{top:45%}
+    .topo-core{width:200px;height:200px}
+    .topo-group-label.left{left:60px;top:30px}
+    .topo-group-label.right{right:60px;top:30px}
+  </style>
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<header class="header" id="main-header"></header>
+<script src="../../js/nav-component.js"></script>
+
+
+<section class="page-banner" style="background-image: url('../../images/solutions-detail/远程会诊系统.jpg'); background-size: cover; background-position: center;">
+</section>
+
+<div class="breadcrumb" data-title="远程会诊系统"></div>
+
+<!-- 系统介绍 -->
+<section class="tech-section">
+  <div class="container">
+    <div class="tech-header">
+      <h2>远程会诊系统</h2>
+      <p>通过高清视频通信技术，实现不同医院、不同地区之间的医疗会诊协作，让优质医疗资源下沉到基层，解决医疗资源分布不均的问题。</p>
+    </div>
+
+    <!-- 系统拓扑图 -->
+    <div class="topo-diagram">
+      <div class="topo-container">
+        <!-- 连接线 -->
+        <svg class="topo-lines" viewBox="0 0 1000 380">
+          <!-- 左侧连线 -->
+          <path class="topo-line left" d="M180,130 Q300,130 400,190" />
+          <path class="topo-line left" d="M200,260 Q350,260 400,190" />
+          <!-- 右侧连线 -->
+          <path class="topo-line right" d="M600,190 Q700,130 820,130" />
+          <path class="topo-line right" d="M600,190 Q650,260 800,260" />
+        </svg>
+
+        <!-- 中心核心节点 -->
+        <div class="topo-center">
+          <div class="topo-core">
+            <div class="topo-core-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+            </div>
+            <div class="topo-core-title">远程会诊平台</div>
+            <div class="topo-core-desc">云端协作中枢</div>
+          </div>
+        </div>
+
+        <!-- 左侧 - 申请端 -->
+        <div class="topo-group-label left">申请端</div>
+        <div class="topo-node left-1">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            基层医院
+          </div>
+          <div class="topo-node-desc">发起会诊申请</div>
+        </div>
+        <div class="topo-node left-2">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            会诊终端
+          </div>
+          <div class="topo-node-desc">患者资料展示</div>
+        </div>
+
+        <!-- 右侧 - 专家端 -->
+        <div class="topo-group-label right">专家端</div>
+        <div class="topo-node right-1">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            专家医院
+          </div>
+          <div class="topo-node-desc">提供会诊意见</div>
+        </div>
+        <div class="topo-node right-2">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+            移动专家端
+          </div>
+          <div class="topo-node-desc">随时随地参与</div>
+        </div>
+
+        <!-- 中心功能 -->
+        <div class="topo-features">
+          <div class="topo-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            高清视频
+          </div>
+          <div class="topo-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            即时通讯
+          </div>
+          <div class="topo-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            资料共享
+          </div>
+          <div class="topo-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            会诊录制
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 功能模块 -->
+<section class="module-section">
+  <div class="container">
+    <div class="module-block">
+      <div class="module-content">
+        <span class="module-tag">核心功能</span>
+        <h3>多级医疗协作</h3>
+        <p>支持多级医疗机构层级管理，构建医联体协作网络，实现会诊预约、审阅、批复全流程管理。</p>
+        <div class="module-features">
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>多级机构管理</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>会诊流程管理</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>权限分级控制</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>预约审阅批复</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-image">
+        <img loading="lazy" src="../../images/products/远程会诊屏.jpg" alt="远程会诊屏">
+      </div>
+    </div>
+
+    <div class="module-block">
+      <div class="module-content">
+        <span class="module-tag">技术支撑</span>
+        <h3>高清音视频互通</h3>
+        <p>高清、低延时、低码率实时音视频多对多互通功能，支持远程视觉共享，实时查看患者状况和医学影像。</p>
+        <div class="module-features">
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>高清低延迟传输</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>多对多视频互通</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>远程视觉共享</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>会诊资料存储</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-image">
+        <img loading="lazy" src="../../images/products/录播服务器.jpg" alt="录播服务器">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="scene-video" data-src="../../videos/scenarios/远程会诊系统 场景展示.mp4"></div>
+
+<!-- 页面导航 -->
+<section class="page-nav">
+  <div class="container">
+    <div class="page-nav-inner">
+      <a href="mobile-visit.html" class="page-nav-item prev">
+        <span class="page-nav-arrow">←</span>
+        <div class="page-nav-text">
+          <span class="page-nav-label">上一个</span>
+          <span class="page-nav-title">移动探视对讲系统</span>
+        </div>
+      </a>
+      <div class="page-nav-placeholder"></div>
+    </div>
+  </div>
+</section>
+
+<section class="products-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>相关产品</h2>
+      <p>远程会诊系统配套设备</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-image"><img loading="lazy" src="../../images/products/远程会诊屏.jpg" alt="远程会诊屏"></div>
+        <h4 class="product-name">远程会诊屏</h4>
+      </div>
+      <div class="product-card">
+        <div class="product-image"><img loading="lazy" src="../../images/products/录播服务器.jpg" alt="录播服务器"></div>
+        <h4 class="product-name">录播服务器</h4>
+      </div>
+      <div class="product-card">
+        <div class="product-image"><img loading="lazy" src="../../images/products/腾讯云智能数智人.jpg" alt="腾讯云智能数智人"></div>
+        <h4 class="product-name">腾讯云智能数智人</h4>
+      </div>
+      <div class="product-card">
+        <div class="product-image"><img loading="lazy" src="../../images/products/编码服务器.jpg" alt="编码服务器"></div>
+        <h4 class="product-name">编码服务器</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="main-footer"></div>
+<script src="../../js/footer-component.js"></script>
+
+<script src="../../js/products-data.js"></script>
+<script src="../../js/cases-data.js"></script>
+<script src="../../js/main.js"></script>
+</body>
+</html>

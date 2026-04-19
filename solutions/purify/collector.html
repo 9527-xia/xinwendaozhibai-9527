@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="设备管理系统 - 手术室医疗设备定位与状态监控">
+  <meta name="keywords" content="设备管理,医疗设备定位,设备监控系统">
+  <title>设备管理系统 - 闻道知白</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/solution-detail.css">
+  <style>
+    .report-dashboard{width:100%;background:linear-gradient(135deg,#1e293b 0%,#0f172a 100%);border-radius:16px;padding:20px;color:#fff;box-shadow:0 10px 40px rgba(0,0,0,.15)}
+    .report-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.1)}
+    .report-header span:first-child{font-size:14px;font-weight:600;color:#60a5fa}
+    .report-date{font-size:11px;color:rgba(255,255,255,.5)}
+    .report-charts{margin-bottom:15px}
+    .chart-bar{margin-bottom:10px}
+    .bar-fill{height:8px;background:linear-gradient(90deg,#3b82f6,#60a5fa);border-radius:4px;margin-bottom:4px}
+    .bar-fill.warning{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+    .bar-fill.danger{background:linear-gradient(90deg,#ef4444,#f87171)}
+    .bar-label{font-size:11px;color:rgba(255,255,255,.7)}
+    .report-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .stat{text-align:center;padding:12px;background:rgba(255,255,255,.1);border-radius:8px}
+    .stat.warning{background:rgba(239,68,68,.2);border:1px solid rgba(239,68,68,.3)}
+    .stat-value{display:block;font-size:24px;font-weight:700;color:#60a5fa;margin-bottom:4px}
+    .stat.warning .stat-value{color:#ef4444}
+    .stat-label{font-size:10px;color:rgba(255,255,255,.5)}
+  </style>
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="header" id="main-header"></header>
+<script src="../../js/nav-component.js"></script>
+
+<section class="page-banner" style="background-image:url('../../images/solutions-detail/设备管理系统.jpg');background-size:cover;background-position:center"></section>
+
+<div class="breadcrumb" data-title="设备管理系统"></div>
+
+<section class="tech-section">
+  <div class="container">
+    <div class="tech-header">
+      <h2>设备管理系统</h2>
+      <p>手术室医疗设备上粘贴专门的定位标签，实现对医疗物资的实时位置监控、历史轨迹查询、视频联动、一键盘点等功能，从根本上解决传统纸质二维码、无源RFID标签需要手工扫码盘点的管理难题。</p>
+    </div>
+    <div class="topo-diagram">
+      <div class="topo-container">
+        <svg class="topo-lines" viewBox="0 0 900 400">
+          <path class="topo-line input" d="M150,180 Q300,180 405,200"/>
+          <path class="topo-line output" d="M495,200 Q600,180 750,180"/>
+          <path class="topo-line" d="M350,250 L200,340"/>
+          <path class="topo-line" d="M550,250 L700,340"/>
+        </svg>
+        <div class="topo-center">
+          <div class="topo-core">
+            <div class="topo-core-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+            <div class="topo-core-title">设备管理服务器</div>
+            <div class="topo-core-desc">定位·监控·盘点</div>
+          </div>
+        </div>
+        <div class="topo-group-label left">资产端</div>
+        <div class="topo-node left">
+          <div class="topo-node-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>定位标签</div>
+          <div class="topo-node-desc">实时定位·轨迹追踪</div>
+        </div>
+        <div class="topo-group-label right">监控端</div>
+        <div class="topo-node right">
+          <div class="topo-node-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42"/></svg>视频联动</div>
+          <div class="topo-node-desc">安防对接·安全保障</div>
+        </div>
+        <div class="topo-node bottom-left">
+          <div class="topo-node-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>管理终端</div>
+          <div class="topo-node-desc">一键盘点·数据统计</div>
+        </div>
+        <div class="topo-node bottom-right">
+          <div class="topo-node-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>设备监控</div>
+          <div class="topo-node-desc">状态监测·故障预警</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="module-section">
+  <div class="container">
+    <div class="module-block">
+      <div class="module-content">
+        <span class="module-tag">核心功能</span>
+        <h3>智能设备管理</h3>
+        <p>系统可用于服务临床科室，适用于病房、急诊、手术室等多个科室，实现医院设备资产的全生命周期管理，提升医院物资管理效率，推动医院高质量发展。</p>
+        <div class="module-features">
+          <div class="module-feature-item"><div class="check-icon"></div><span>实时定位监控</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>一键盘点</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>视频联动</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>防拆告警</span></div>
+        </div>
+      </div>
+      <div class="module-image"><img loading="lazy" src="../../images/products/手持PAD扫码枪.jpg" alt="设备管理系统"></div>
+    </div>
+    <div class="module-block">
+      <div class="module-content">
+        <span class="module-tag">数据分析</span>
+        <h3>智能报表分析</h3>
+        <p>提供设备使用率、周转率、维修记录等多维度数据分析，生成可视化报表，辅助医院进行资产管理和决策。</p>
+        <div class="module-features">
+          <div class="module-feature-item"><div class="check-icon"></div><span>使用率统计</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>维修记录管理</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>可视化报表</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>预警提醒</span></div>
+        </div>
+      </div>
+      <div class="module-image">
+        <div class="report-dashboard">
+          <div class="report-header"><span>设备使用率分析</span><span class="report-date">2024年1月</span></div>
+          <div class="report-charts">
+            <div class="chart-bar"><div class="bar-fill" style="width:85%"></div><span class="bar-label">呼吸机 85%</span></div>
+            <div class="chart-bar"><div class="bar-fill warning" style="width:92%"></div><span class="bar-label">监护仪 92%</span></div>
+            <div class="chart-bar"><div class="bar-fill" style="width:78%"></div><span class="bar-label">输液泵 78%</span></div>
+            <div class="chart-bar"><div class="bar-fill danger" style="width:45%"></div><span class="bar-label">除颤仪 45%</span></div>
+          </div>
+          <div class="report-stats">
+            <div class="stat"><span class="stat-value">156</span><span class="stat-label">设备总数</span></div>
+            <div class="stat"><span class="stat-value">23</span><span class="stat-label">待维修</span></div>
+            <div class="stat warning"><span class="stat-value">5</span><span class="stat-label">预警</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="scene-video" data-src="../../videos/scenarios/设备管理系统场景展示.mp4"></div>
+
+<section class="page-nav">
+  <div class="container">
+    <div class="page-nav-inner">
+      <a href="air-purifier.html" class="page-nav-item prev"><span class="page-nav-arrow">←</span><div class="page-nav-text"><span class="page-nav-label">上一个</span><span class="page-nav-title">数字化手术系统</span></div></a>
+      <a href="locker.html" class="page-nav-item next"><div class="page-nav-text"><span class="page-nav-label">下一个</span><span class="page-nav-title">ICU信息管理系统</span></div><span class="page-nav-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="products-section">
+  <div class="container">
+    <div class="section-title"><h2>相关产品</h2><p>设备管理系统核心组件</p></div>
+    <div class="products-grid">
+      <div class="product-card"><div class="product-image"><img loading="lazy" src="../../images/products/手持PAD扫码枪.jpg" alt="手持PAD扫码枪"></div><h4 class="product-name">手持PAD扫码枪</h4></div>
+      <div class="product-card"><div class="product-image"><img loading="lazy" src="../../images/products/护士工作站.jpg" alt="管理终端"></div><h4 class="product-name">管理终端</h4></div>
+
+    </div>
+  </div>
+</section>
+
+<div id="main-footer"></div>
+<script src="../../js/footer-component.js"></script>
+<script src="../../js/products-data.js"></script>
+<script src="../../js/cases-data.js"></script>
+<script src="../../js/main.js"></script>
+</body>
+</html>

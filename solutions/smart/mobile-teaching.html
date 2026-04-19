@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="移动示教系统 - 灵活便捷的移动手术示教解决方案">
+  <meta name="keywords" content="移动示教,手术示教推车,移动教学">
+  <title>移动示教系统 - 闻道知白</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/solution-detail.css">
+  <style>
+    .topo-diagram{max-width:1000px}
+    .topo-container{min-height:420px}
+    .topo-group-label.left{left:60px;top:20px}
+    .topo-group-label.right{right:60px;top:20px}
+    .topo-group-label.bottom{left:50%;transform:translateX(-50%);bottom:-30px}
+    /* 移动示教推车场景图 */
+    .cart-scene{max-width:900px;margin:0 auto;background:white;border-radius:20px;padding:40px;box-shadow:0 4px 20px rgba(0,0,0,0.08)}
+    .cart-scene-title{text-align:center;font-size:20px;font-weight:700;color:var(--text-dark);margin-bottom:30px}
+    .cart-body{display:flex;flex-direction:column;align-items:center}
+    .cart-cameras{display:flex;justify-content:center;gap:60px;margin-bottom:20px}
+    .camera-item{display:flex;flex-direction:column;align-items:center}
+    .camera-icon{width:70px;height:70px;background:linear-gradient(135deg,#e0f2fe,#bae6fd);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:8px}
+    .camera-icon svg{width:36px;height:36px;color:#0284c7}
+    .camera-name{font-size:13px;font-weight:500;color:var(--text-dark)}
+    .camera-desc{font-size:11px;color:var(--text-gray)}
+    .cart-line{width:2px;height:20px;background:#cbd5e1}
+    .cart-line-h{display:flex;align-items:center;gap:0}
+    .cart-line-h::before,.cart-line-h::after{content:'';width:80px;height:2px;background:#cbd5e1}
+    .cart-line-h .line-dot{width:8px;height:8px;background:#cbd5e1;border-radius:50%}
+    .cart-main{border:3px solid #e2e8f0;border-radius:16px;padding:20px 30px;background:#fafafa;width:100%;max-width:500px}
+    .cart-main-label{text-align:center;font-size:14px;font-weight:600;color:var(--primary);margin-bottom:16px}
+    .cart-devices{display:flex;justify-content:center;gap:40px}
+    .cart-device{display:flex;flex-direction:column;align-items:center}
+    .cart-device-icon{width:60px;height:60px;background:white;border:2px solid #e2e8f0;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:6px}
+    .cart-device-icon svg{width:28px;height:28px;color:var(--primary)}
+    .cart-device-name{font-size:12px;font-weight:500;color:var(--text-dark)}
+    .cart-wheels{display:flex;gap:100px;margin-top:16px}
+    .wheel{width:40px;height:40px;background:#64748b;border-radius:50%;display:flex;align-items:center;justify-content:center}
+    .wheel::after{content:'';width:16px;height:16px;background:#475569;border-radius:50%}
+    .wheel-label{text-align:center;margin-top:8px;font-size:11px;color:var(--text-gray)}
+    @media(max-width:768px){.cart-cameras{gap:30px}.cart-devices{gap:20px}.cart-wheels{gap:60px}.cart-main{padding:16px 20px}}
+  </style>
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<header class="header" id="main-header"></header>
+<script src="../../js/nav-component.js"></script>
+
+
+<section class="page-banner" style="background-image: url('../../images/solutions-detail/移动示教系统.jpg'); background-size: cover; background-position: center;">
+</section>
+
+<div class="breadcrumb" data-title="移动示教系统"></div>
+
+<!-- 系统介绍 -->
+<section class="tech-section">
+  <div class="container">
+    <div class="tech-header">
+      <h2>移动示教系统</h2>
+      <p>移动示教系统是用于医学教育的系统，改善了医院的教育环境，医疗教学不再受手术室大小及手术设备的限制。系统通过手推车将全景摄像机、术野摄像机、编码器等设备集成，实现移动式录播手术室情况。</p>
+    </div>
+
+    <!-- 系统拓扑图 -->
+    <div class="topo-diagram">
+      <div class="topo-container">
+        <!-- 连接线 -->
+        <svg class="topo-lines" viewBox="0 0 1000 420">
+          <!-- 输入端连线 -->
+          <path class="topo-line input" d="M160,110 Q300,110 410,160" />
+          <path class="topo-line input" d="M200,225 Q350,225 410,160" />
+          <path class="topo-line input" d="M160,340 Q300,340 410,160" />
+          <!-- 输出端连线 -->
+          <path class="topo-line output" d="M590,160 Q700,110 840,110" />
+          <path class="topo-line output" d="M590,160 Q650,225 800,225" />
+          <path class="topo-line output" d="M590,160 Q700,340 840,340" />
+          <!-- 存储连线 -->
+          <path class="topo-line" d="M500,250 L500,380" />
+        </svg>
+
+        <!-- 中心核心节点 -->
+        <div class="topo-center">
+          <div class="topo-core">
+            <div class="topo-core-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="1" y="3" width="15" height="13" rx="2"/>
+                <path d="M16 8h4l3 3v5a2 2 0 0 1-2 2h-1"/>
+                <circle cx="5.5" cy="18.5" r="2.5"/>
+                <circle cx="18.5" cy="18.5" r="2.5"/>
+              </svg>
+            </div>
+            <div class="topo-core-title">移动示教推车</div>
+            <div class="topo-core-desc">集成采集·编码·控制</div>
+          </div>
+        </div>
+
+        <!-- 输入端 - 采集设备 -->
+        <div class="topo-group-label left">采集端</div>
+        <div class="topo-node input-1">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            术野摄像机
+          </div>
+          <div class="topo-node-desc">万向臂灵活转向</div>
+        </div>
+        <div class="topo-node input-2">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            全景摄像机
+          </div>
+          <div class="topo-node-desc">手术室全景画面</div>
+        </div>
+        <div class="topo-node input-3">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 2v20M17 2v20M2 12h20M2 7h5M2 17h5M17 7h5M17 17h5"/></svg>
+            医疗影像设备
+          </div>
+          <div class="topo-node-desc">腔镜/DSA信号接入</div>
+        </div>
+
+        <!-- 输出端 - 显示设备 -->
+        <div class="topo-group-label right">显示端</div>
+        <div class="topo-node output-1">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            示教双屏
+          </div>
+          <div class="topo-node-desc">实时预览与回放</div>
+        </div>
+        <div class="topo-node output-2">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+            移动终端
+          </div>
+          <div class="topo-node-desc">平板/手机远程观摩</div>
+        </div>
+        <div class="topo-node output-3">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            远程直播
+          </div>
+          <div class="topo-node-desc">异地专家在线观看</div>
+        </div>
+
+        <!-- 存储端 -->
+        <div class="topo-group-label bottom">存储端</div>
+        <div class="topo-node storage">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.66 9-3V5"/></svg>
+            本地存储
+          </div>
+          <div class="topo-node-desc">大容量硬盘 · 安全可靠</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 功能模块 -->
+<section class="module-section">
+  <div class="container">
+    <div class="module-block">
+      <div class="module-content">
+        <span class="module-tag">核心设备</span>
+        <h3>移动示教推车</h3>
+        <p>集成全景摄像机、术野摄像机、编码器等设备的移动推车，采用隐藏走线设计，医疗级静音车轮，可灵活移动到不同手术室。</p>
+        <div class="module-features">
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>万向臂术野摄像机</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>全景摄像机</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>医疗级静音车轮</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>隐藏式走线设计</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-image">
+        <img loading="lazy" src="../../images/products/手术示教移动推车.jpg" alt="移动示教推车">
+      </div>
+    </div>
+
+    <div class="module-block">
+      <div class="module-content">
+        <span class="module-tag">核心功能</span>
+        <h3>高清录制与直播</h3>
+        <p>支持多路视频同步录制，实现手术内容实时远程直播，观摩者可远程观看手术过程，不再受手术室空间限制。</p>
+        <div class="module-features">
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>多路视频同步录制</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>实时远程直播</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>教学互动功能</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>设备信号对接</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-image">
+        <img loading="lazy" src="../../images/products/示教主控屏.jpg" alt="示教主控屏">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="scene-video" data-src="../../videos/scenarios/移动示教系统 场景展示.mp4"></div>
+
+<!-- 页面导航 -->
+<section class="page-nav">
+  <div class="container">
+    <div class="page-nav-inner">
+      <div class="page-nav-placeholder"></div>
+      <a href="operation-teaching.html" class="page-nav-item next">
+        <div class="page-nav-text">
+          <span class="page-nav-label">下一个</span>
+          <span class="page-nav-title">手术示教系统</span>
+        </div>
+        <span class="page-nav-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="products-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>相关产品</h2>
+      <p>移动示教系统配套设备</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-image"><img loading="lazy" src="../../images/products/手术示教移动推车.jpg" alt="移动示教推车"></div>
+        <h4 class="product-name">移动示教推车</h4>
+      </div>
+      <div class="product-card">
+        <div class="product-image"><img loading="lazy" src="../../images/products/示教主控屏.jpg" alt="示教主控屏"></div>
+        <h4 class="product-name">示教主控屏</h4>
+      </div>
+      <div class="product-card">
+        <div class="product-image"><img loading="lazy" src="../../images/products/示教编码服务器.jpg" alt="编码服务器"></div>
+        <h4 class="product-name">编码服务器</h4>
+      </div>
+      <div class="product-card">
+        <div class="product-image"><img loading="lazy" src="../../images/products/示教双屏.jpg" alt="示教双屏"></div>
+        <h4 class="product-name">示教双屏</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="main-footer"></div>
+<script src="../../js/footer-component.js"></script>
+
+<script src="../../js/products-data.js"></script>
+<script src="../../js/cases-data.js"></script>
+<script src="../../js/main.js"></script>
+</body>
+</html>

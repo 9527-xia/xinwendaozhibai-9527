@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="互联网医院系统 - 线上诊疗与互联网医院建设">
+  <meta name="keywords" content="互联网医院,线上诊疗,互联网医疗,远程问诊">
+  <title>互联网医院系统 - 闻道知白</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/solution-detail.css">
+  <style>
+    .ai-chat-panel{width:100%;background:linear-gradient(135deg,#1e1b4b 0%,#312e81 100%);border-radius:16px;overflow:hidden;color:#fff;box-shadow:0 10px 40px rgba(0,0,0,.15)}
+    .chat-header{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.1)}
+    .ai-avatar{width:28px;height:28px;background:linear-gradient(135deg,#818cf8,#6366f1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700}
+    .chat-header span:nth-child(2){flex:1;font-size:13px;font-weight:500}
+    .online{font-size:10px;color:#4ade80}
+    .chat-messages{padding:16px;display:flex;flex-direction:column;gap:12px}
+    .msg{padding:10px 14px;border-radius:12px;font-size:12px;line-height:1.5}
+    .msg.user{background:rgba(99,102,241,.3);align-self:flex-end;max-width:80%}
+    .msg.ai{background:rgba(255,255,255,.1);align-self:flex-start;max-width:90%}
+    .chat-input{display:flex;align-items:center;gap:10px;padding:12px 16px;background:rgba(0,0,0,.2)}
+    .chat-input span:first-child{flex:1;font-size:12px;color:rgba(255,255,255,.4)}
+    .send-btn{width:28px;height:28px;background:#6366f1;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px}
+  </style>
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="header" id="main-header"></header>
+<script src="../../js/nav-component.js"></script>
+
+<section class="page-banner" style="background-image:url('../../images/solutions-detail/互联网医院系统.jpg');background-size:cover;background-position:center"></section>
+
+<div class="breadcrumb" data-title="互联网医院系统"></div>
+
+<section class="tech-section">
+  <div class="container">
+    <div class="tech-header">
+      <h2>互联网医院系统</h2>
+      <p>将云计算、云存储、视频云及AI等先进技术引入到医疗方案中，实现线上问诊、在线开方、药品配送、在线支付等一体化服务，患者足不出户即可享受便捷的医疗服务。</p>
+    </div>
+    <div class="topo-diagram">
+      <div class="topo-container">
+        <svg class="topo-lines" viewBox="0 0 900 400">
+          <path class="topo-line" d="M150,180 Q300,180 405,200"/>
+          <path class="topo-line" d="M495,200 Q600,180 750,180"/>
+          <path class="topo-line" d="M350,250 L200,340"/>
+          <path class="topo-line" d="M550,250 L700,340"/>
+        </svg>
+        <div class="topo-center">
+          <div class="topo-core">
+            <div class="topo-core-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.66 9-3V5"/></svg></div>
+            <div class="topo-core-title">互联网医院平台</div>
+            <div class="topo-core-desc">问诊·开方·配送</div>
+          </div>
+        </div>
+        <div class="topo-group-label left">服务端</div>
+        <div class="topo-node left">
+          <div class="topo-node-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>医生工作站</div>
+          <div class="topo-node-desc">在线问诊·处方开具</div>
+        </div>
+        <div class="topo-group-label right">用户端</div>
+        <div class="topo-node right">
+          <div class="topo-node-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>患者APP/小程序</div>
+          <div class="topo-node-desc">预约挂号·在线支付</div>
+        </div>
+        <div class="topo-node bottom-left">
+          <div class="topo-node-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>AI分诊</div>
+          <div class="topo-node-desc">智能问诊·科室推荐</div>
+        </div>
+        <div class="topo-node bottom-right">
+          <div class="topo-node-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>药品配送</div>
+          <div class="topo-node-desc">在线支付·配送到家</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="module-section">
+  <div class="container">
+    <div class="module-block">
+      <div class="module-content">
+        <span class="module-tag">核心功能</span>
+        <h3>便捷智能医疗服务</h3>
+        <p>依托实体医院，与互联网医院互联互通，构建线上线下一体化的医疗服务体系，提升医疗服务效率和质量。</p>
+        <div class="module-features">
+          <div class="module-feature-item"><div class="check-icon"></div><span>诊前分诊</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>在线问诊</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>开方送药</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>康复指导</span></div>
+        </div>
+      </div>
+      <div class="module-image"><img loading="lazy" src="../../images/products/腾讯云智能数智人.jpg" alt="智能服务平台"></div>
+    </div>
+    <div class="module-block">
+      <div class="module-content">
+        <span class="module-tag">智能服务</span>
+        <h3>AI智能辅助</h3>
+        <p>集成AI智能问答系统，提供7x24小时在线咨询服务，智能导诊、健康评估、用药提醒等功能，提升患者就医体验。</p>
+        <div class="module-features">
+          <div class="module-feature-item"><div class="check-icon"></div><span>智能导诊</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>健康评估</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>用药提醒</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>随访管理</span></div>
+        </div>
+      </div>
+      <div class="module-image">
+        <div class="ai-chat-panel">
+          <div class="chat-header"><span class="ai-avatar">AI</span><span>智能导诊助手</span><span class="online">● 在线</span></div>
+          <div class="chat-messages">
+            <div class="msg user"><span>最近总感觉头晕乏力</span></div>
+            <div class="msg ai"><span>您好！根据您的描述，建议您关注以下几点：<br>1. 测量血压<br>2. 检查血红蛋白<br>3. 规律作息<br>需要为您推荐相关科室吗？</span></div>
+          </div>
+          <div class="chat-input"><span>请输入您的问题...</span><span class="send-btn">→</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="scene-video" data-src="../../videos/scenarios/互联网医院系统  场景展示.mp4"></div>
+
+<section class="page-nav">
+  <div class="container">
+    <div class="page-nav-inner">
+      <div class="page-nav-placeholder"></div>
+      <a href="his.html" class="page-nav-item next"><div class="page-nav-text"><span class="page-nav-label">下一个</span><span class="page-nav-title">医院体检报告解读系统</span></div><span class="page-nav-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="products-section">
+  <div class="container">
+    <div class="section-title"><h2>相关产品</h2><p>互联网医院系统配套产品</p></div>
+    <div class="products-grid">
+      <div class="product-card"><div class="product-image"><img loading="lazy" src="../../images/products/腾讯云智能数智人.jpg" alt="智能服务平台"></div><h4 class="product-name">智能服务平台</h4></div>
+      <div class="product-card"><div class="product-image"><img loading="lazy" src="../../images/products/护士工作站.jpg" alt="护士工作站"></div><h4 class="product-name">护士工作站</h4></div>
+      <div class="product-card"><div class="product-image"><img loading="lazy" src="../../images/products/远程会诊屏.jpg" alt="远程问诊终端"></div><h4 class="product-name">远程问诊终端</h4></div>
+      <div class="product-card"><div class="product-image"><img loading="lazy" src="../../images/products/手持PAD扫码枪.jpg" alt="移动终端"></div><h4 class="product-name">移动终端</h4></div>
+    </div>
+  </div>
+</section>
+
+<div id="main-footer"></div>
+<script src="../../js/footer-component.js"></script>
+<script src="../../js/products-data.js"></script>
+<script src="../../js/cases-data.js"></script>
+<script src="../../js/main.js"></script>
+</body>
+</html>

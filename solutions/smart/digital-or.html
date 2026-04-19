@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="数字化手术系统 - 集成手术室设备管理、影像传输、远程会诊等功能的智能化手术室解决方案">
+  <meta name="keywords" content="数字化手术室,手术系统,手术室管理,远程会诊">
+  <title>数字化手术系统 - 闻道知白</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/solution-detail.css">
+  <style>
+    .topo-diagram{max-width:1000px}
+    .topo-container{min-height:540px}
+    .topo-node.input-3{top:280px}
+    .topo-node.input-4{top:400px}
+    .topo-node.output-3{top:280px}
+    .topo-node.output-4{top:400px}
+  </style>
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<header class="header" id="main-header"></header>
+<script src="../../js/nav-component.js"></script>
+
+<section class="page-banner" style="background-image: url('../../images/solutions-detail/数字化手术系统.jpg'); background-size: cover; background-position: center;">
+</section>
+
+<div class="breadcrumb" data-title="数字化手术系统"></div>
+
+<!-- 系统介绍 -->
+<section class="tech-section">
+  <div class="container">
+    <div class="tech-header">
+      <h2>数字化手术系统</h2>
+      <p>集成了手术室设备管理、医学影像传输、手术示教直播、远程会诊等功能的综合性手术室解决方案，实现手术室信息的全面集成与智能管理。</p>
+    </div>
+
+    <!-- 系统拓扑图 -->
+    <div class="topo-diagram">
+      <div class="topo-container">
+        <svg class="topo-lines" viewBox="0 0 1000 480">
+          <path class="topo-line input" d="M150,100 Q300,100 410,180" />
+          <path class="topo-line input" d="M150,200 Q300,200 410,180" />
+          <path class="topo-line input" d="M150,300 Q300,300 410,180" />
+          <path class="topo-line input" d="M150,400 Q300,400 410,180" />
+          <path class="topo-line output" d="M590,180 Q700,100 850,100" />
+          <path class="topo-line output" d="M590,180 Q700,200 850,200" />
+          <path class="topo-line output" d="M590,180 Q700,300 850,300" />
+          <path class="topo-line output" d="M590,180 Q700,400 850,400" />
+        </svg>
+
+        <div class="topo-center">
+          <div class="topo-core">
+            <div class="topo-core-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <path d="M8 21h8M12 17v4"/>
+              </svg>
+            </div>
+            <div class="topo-core-title">手术室主机</div>
+            <div class="topo-core-desc">集成·控制·分发</div>
+          </div>
+        </div>
+
+        <div class="topo-group-label left">信号输入</div>
+        <div class="topo-node input-1">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2"/></svg>
+            术野摄像机
+          </div>
+          <div class="topo-node-desc">4K超高清手术创口</div>
+        </div>
+        <div class="topo-node input-2">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            全景摄像机
+          </div>
+          <div class="topo-node-desc">手术室全景画面</div>
+        </div>
+        <div class="topo-node input-3">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2"/></svg>
+            内镜/超声
+          </div>
+          <div class="topo-node-desc">医疗影像设备</div>
+        </div>
+        <div class="topo-node input-4">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/></svg>
+            HIS/PACS
+          </div>
+          <div class="topo-node-desc">医院信息系统</div>
+        </div>
+
+        <div class="topo-group-label right">输出显示</div>
+        <div class="topo-node output-1">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>
+            手术室大屏
+          </div>
+          <div class="topo-node-desc">术者观看显示屏</div>
+        </div>
+        <div class="topo-node output-2">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/></svg>
+            示教终端
+          </div>
+          <div class="topo-node-desc">示教室直播观看</div>
+        </div>
+        <div class="topo-node output-3">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            远程会诊
+          </div>
+          <div class="topo-node-desc">异地专家协作</div>
+        </div>
+        <div class="topo-node output-4">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.66 9-3V5"/></svg>
+            录制存储
+          </div>
+          <div class="topo-node-desc">手术录像归档</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 功能模块 -->
+<section class="module-section">
+  <div class="container">
+    <div class="module-block">
+      <div class="module-content">
+        <span class="module-tag">核心功能</span>
+        <h3>多路影像集成</h3>
+        <p>支持术野摄像机、全景摄像机、内镜、超声、DSA等多种影像源接入与切换，实现手术过程的高清录制与直播。</p>
+        <div class="module-features">
+          <div class="module-feature-item">
+            <div class="check-icon"></div>
+            <span>多路视频接入</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon"></div>
+            <span>4K高清录制</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon"></div>
+            <span>实时直播分发</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon"></div>
+            <span>画中画显示</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-image">
+        <img loading="lazy" src="../../images/products/数字化手术室主机.jpg" alt="数字化手术室主机">
+      </div>
+    </div>
+
+    <div class="module-block">
+      <div class="module-content">
+        <span class="module-tag">系统集成</span>
+        <h3>一体化控制管理</h3>
+        <p>集成手术室灯光、空调、医疗设备的一体化控制，触屏操作。与医院HIS、PACS、LIS等系统无缝对接，实现信息实时调阅。</p>
+        <div class="module-features">
+          <div class="module-feature-item">
+            <div class="check-icon"></div>
+            <span>设备集中控制</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon"></div>
+            <span>HIS系统对接</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon"></div>
+            <span>PACS影像调阅</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon"></div>
+            <span>远程会诊协作</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-image">
+        <img loading="lazy" src="../../images/products/示教主控屏.jpg" alt="示教主控屏">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="scene-video" data-src="../../videos/scenarios/数字化手术系统 场景展示.mp4"></div>
+
+<section class="page-nav">
+  <div class="container">
+    <div class="page-nav-inner">
+      <a href="or-control.html" class="page-nav-item prev">
+        <span class="page-nav-arrow">←</span>
+        <div class="page-nav-text">
+          <span class="page-nav-label">上一个</span>
+          <span class="page-nav-title">信息发布系统</span>
+        </div>
+      </a>
+      <a href="icu-visit.html" class="page-nav-item next">
+        <div class="page-nav-text">
+          <span class="page-nav-label">下一个</span>
+          <span class="page-nav-title">ICU探视对讲系统</span>
+        </div>
+        <span class="page-nav-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="products-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>相关产品</h2>
+      <p>数字化手术室配套设备</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-image"><img loading="lazy" src="../../images/products/数字化手术室主机.jpg" alt="数字化手术室主机"></div>
+        <h4 class="product-name">数字化手术室主机</h4>
+      </div>
+      <div class="product-card">
+        <div class="product-image"><img loading="lazy" src="../../images/products/手术室门口机.jpg" alt="手术室门口机"></div>
+        <h4 class="product-name">手术室门口机</h4>
+      </div>
+      <div class="product-card">
+        <div class="product-image"><img loading="lazy" src="../../images/products/手术信息公告屏.jpg" alt="手术信息公告屏"></div>
+        <h4 class="product-name">手术信息公告屏</h4>
+      </div>
+      <div class="product-card">
+        <div class="product-image"><img loading="lazy" src="../../images/products/示教主控屏.jpg" alt="示教主控屏"></div>
+        <h4 class="product-name">示教主控屏</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="main-footer"></div>
+<script src="../../js/footer-component.js"></script>
+
+<script src="../../js/products-data.js"></script>
+<script src="../../js/cases-data.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

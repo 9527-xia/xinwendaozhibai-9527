@@ -1,0 +1,641 @@
+    /* ===== 3D立方体轮播样式 ===== */
+    .hero-slider {
+      position: relative;
+      height: 85vh;
+      min-height: 500px;
+      overflow: hidden;
+      margin-top: 0;
+      background: #000;
+    }
+
+    /* 动态背景图 */
+    .hero-slider .bg-image {
+      position: absolute;
+      inset: 0;
+      background: url('../images/home/hero-bg.jpg') center center / cover no-repeat;
+      animation: bgZoom 20s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+    @keyframes bgZoom {
+      0% { transform: scale(1) translate(0, 0); }
+      50% { transform: scale(1.1) translate(-2%, -1%); }
+      100% { transform: scale(1.05) translate(1%, 2%); }
+    }
+
+    /* 分屏开场 */
+    .intro {
+      position: absolute;
+      inset: 0;
+      z-index: 100;
+      pointer-events: none;
+    }
+    .intro.hidden {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+
+    .split-screen {
+      position: absolute;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      z-index: 100;
+      pointer-events: none;
+      background-size: 200% 100%;
+      background-repeat: no-repeat;
+    }
+    .split-left {
+      left: 0;
+      background-image: url('../images/home/split-1.jpg');
+      background-position: 0 center;
+      animation: splitClose 0.8s ease-in-out 2s forwards;
+    }
+    .split-right {
+      right: 0;
+      background-image: url('../images/home/split-1.jpg');
+      background-position: 100% center;
+      animation: splitCloseRight 0.8s ease-in-out 2s forwards;
+    }
+    @keyframes splitClose {
+      to { transform: translateX(-100%); }
+    }
+    @keyframes splitCloseRight {
+      to { transform: translateX(100%); }
+    }
+
+    .center-line {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.5), transparent);
+      z-index: 101;
+      animation: lineFade 0.5s ease-out 1.8s forwards;
+    }
+    @keyframes lineFade {
+      to { opacity: 0; }
+    }
+
+    /* 3D立方体 */
+    .cube-container {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 1500px;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.8s;
+      z-index: 50;
+    }
+    .cube-container.visible { opacity: 1; }
+
+    .cube-wrapper {
+      width: 500px;
+      height: 500px;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: cubeRotate 25s linear infinite;
+      transition: all 1s ease;
+    }
+    .cube-wrapper.blown { opacity: 0; transform: scale(1.5); }
+    @keyframes cubeRotate {
+      from { transform: rotateX(-15deg) rotateY(0deg); }
+      to { transform: rotateX(-15deg) rotateY(360deg); }
+    }
+
+    .cube-face {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      left: 50px;
+      top: 50px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cube-face.front { transform: translateZ(200px); }
+    .cube-face.back { transform: translateZ(-200px) rotateY(180deg); }
+    .cube-face.left { transform: translateX(-200px) rotateY(-90deg); }
+    .cube-face.right { transform: translateX(200px) rotateY(90deg); }
+    .cube-face.top { transform: translateY(-200px) rotateX(90deg); }
+    .cube-face.bottom { transform: translateY(200px) rotateX(-90deg); }
+
+    .cube-face img {
+      width: 85%;
+      height: 85%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    /* 环绕粒子 */
+    .orbit-particles {
+      position: absolute;
+      inset: 0;
+      animation: orbitRotate 20s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes orbitRotate {
+      from { transform: rotateZ(0deg); }
+      to { transform: rotateZ(360deg); }
+    }
+    .orbit-particle {
+      position: absolute;
+      background: radial-gradient(circle, #fff 0%, rgba(200, 150, 255, 0.6) 50%, transparent 100%);
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(180, 100, 255, 0.5);
+    }
+
+    /* 蒲公英种子 */
+    .seed {
+      position: absolute;
+      pointer-events: none;
+      z-index: 100;
+    }
+    .seed-body {
+      width: 4px;
+      height: 4px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+    .seed-fluff {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: -8px;
+      top: -8px;
+    }
+
+    /* 结束分屏 */
+    .outro {
+      position: absolute;
+      inset: 0;
+      z-index: 200;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .outro.active { opacity: 1; }
+
+    .outro-split {
+      position: absolute;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.95);
+    }
+    .outro-split img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .outro-split.left {
+      left: 0;
+      transform: translateX(-100%);
+    }
+    .outro-split.right {
+      right: 0;
+      transform: translateX(100%);
+    }
+    .outro.active .outro-split.left {
+      animation: outroCloseLeft 1s ease-in-out forwards;
+    }
+    .outro.active .outro-split.right {
+      animation: outroCloseRight 1s ease-in-out forwards;
+    }
+    @keyframes outroCloseLeft {
+      from { transform: translateX(-100%); }
+      to { transform: translateX(0); }
+    }
+    @keyframes outroCloseRight {
+      from { transform: translateX(100%); }
+      to { transform: translateX(0); }
+    }
+
+    .outro-line {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.5), transparent);
+      z-index: 201;
+      opacity: 0;
+    }
+    .outro.active .outro-line {
+      animation: outroLineShow 0.5s ease-out 0.9s forwards;
+    }
+    @keyframes outroLineShow {
+      to { opacity: 1; }
+    }
+
+    /* 四角布局 - 卡片在四角，文字在中间 */
+    .business .container {
+      position: relative;
+      max-width: none;
+      width: 100%;
+      min-height: 800px;
+      padding: 0;
+    }
+
+    .business .section-header {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 10;
+      max-width: 200px;
+    }
+
+    .business .section-title::after {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .business .section-label {
+      color: var(--accent);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .business .section-title {
+      display: block;
+      width: auto;
+      font-size: 32px;
+      color: var(--text-dark);
+    }
+
+    .business .section-desc {
+      color: var(--text-gray);
+      font-size: 16px;
+    }
+
+    .business .section-title::after {
+      margin-left: 0;
+    }
+
+    .solutions-grid {
+      position: relative;
+      width: 100%;
+      height: 1050px;
+    }
+
+    .solution-card {
+      position: absolute;
+      width: 650px;
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      border: 2px solid transparent;
+      opacity: 0;
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .solution-card:nth-child(1) {
+      top: 0;
+      left: 150px;
+      animation-delay: 0.1s;
+    }
+    .solution-card:nth-child(2) {
+      top: 0;
+      right: 150px;
+      animation-delay: 0.2s;
+    }
+    .solution-card:nth-child(3) {
+      bottom: 0;
+      left: 150px;
+      animation-delay: 0.3s;
+    }
+    .solution-card:nth-child(4) {
+      bottom: 0;
+      right: 150px;
+      animation-delay: 0.4s;
+    }
+
+    /* 进场动画 - 使用后面产品区定义的 fadeInUp (translateY 30px) */
+
+    /* 光晕扫过效果 */
+    .solution-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: left 0.6s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .solution-card:hover::after {
+      left: 150%;
+    }
+
+    .solution-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
+      background-size: 200% 100%;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s ease;
+    }
+
+    .solution-card:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 20px 50px rgba(0, 82, 204, 0.2);
+      border-color: rgba(0, 82, 204, 0.1);
+    }
+
+    .solution-card:hover::before {
+      transform: scaleX(1);
+      animation: shimmer 1.5s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    .solution-card .card-image {
+      width: 100%;
+      height: 280px;
+      flex-shrink: 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .solution-card .card-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(0,82,204,0.1) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .solution-card:hover .card-image::after {
+      opacity: 1;
+    }
+
+    .solution-card .card-image img,
+    .solution-card .card-image video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .solution-card:hover .card-image img,
+    .solution-card:hover .card-image video {
+      transform: scale(1.08);
+    }
+
+    .solution-card .card-content {
+      padding: 20px 24px;
+      background: #ffffff;
+    }
+
+    .solution-card .card-tag {
+      display: inline-block !important;
+      padding: 6px 16px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white !important;
+      border-radius: 20px;
+      visibility: visible !important;
+      font-size: 14px;
+      margin-bottom: 16px;
+      align-self: flex-start;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .solution-card:hover .card-tag {
+      transform: scale(1.1);
+      box-shadow: 0 4px 15px rgba(0, 82, 204, 0.3);
+    }
+
+    .solution-card .card-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: #1a1a2e !important;
+      margin-bottom: 12px;
+      transition: color 0.3s ease;
+      display: block !important;
+      visibility: visible !important;
+    }
+
+    .solution-card:hover .card-title {
+      color: var(--primary);
+    }
+
+    .solution-card .card-desc {
+      font-size: 16px;
+      color: #666 !important;
+      line-height: 1.7;
+      margin-bottom: 14px;
+      display: block !important;
+      visibility: visible !important;
+    }
+
+    .solution-card .card-link {
+      display: inline-flex !important;
+      align-items: center;
+      gap: 6px;
+      color: var(--primary) !important;
+      font-weight: 500;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      align-self: flex-start;
+      visibility: visible !important;
+    }
+
+    .solution-card:hover .card-link {
+      gap: 12px;
+      transform: translateX(5px);
+    }
+
+    .solution-card .card-link svg {
+      transition: transform 0.3s ease;
+    }
+
+    .solution-card:hover .card-link svg {
+      transform: translateX(4px);
+    }
+
+    @media (max-width: 768px) {
+      .business .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+      }
+      .business .section-header {
+        margin-bottom: 0;
+        margin-left: 0;
+      }
+      .solutions-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+      }
+      .solution-card {
+        flex-direction: column;
+      }
+      .solution-card .card-image {
+        width: 100%;
+        height: 160px;
+      }
+    }
+
+    /* 热门产品动态效果 */
+    .products-grid .product-card {
+      position: relative;
+      overflow: hidden;
+      border: 2px solid transparent;
+      transition: all 0.4s ease;
+    }
+
+    .products-grid .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s ease;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .products-grid .product-card:hover::before {
+      left: 100%;
+    }
+
+    .products-grid .product-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 82, 204, 0.15);
+      border-color: var(--primary);
+    }
+
+    .products-grid .product-image img {
+      transition: transform 0.5s ease;
+    }
+
+    .products-grid .product-card:hover .product-image img {
+      transform: scale(1.1);
+    }
+
+    .products-grid .product-card:hover .product-tag {
+      background: var(--primary);
+      transform: scale(1.1);
+    }
+
+    .products-grid .product-tag {
+      transition: all 0.3s ease;
+    }
+
+    /* 产品卡片渐入动画 */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .products-grid .product-card {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .products-grid .product-card:nth-child(1) { animation-delay: 0.1s; }
+    .products-grid .product-card:nth-child(2) { animation-delay: 0.2s; }
+    .products-grid .product-card:nth-child(3) { animation-delay: 0.3s; }
+    .products-grid .product-card:nth-child(4) { animation-delay: 0.4s; }
+    .products-grid .product-card:nth-child(5) { animation-delay: 0.5s; }
+    .products-grid .product-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* 首页专属样式（从 style.css 迁移） */
+.business {
+  padding: 80px 0;
+  background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.business::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  right: -150px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 168, 232, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.business::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0, 82, 204, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.business .section-header {
+  text-align: left;
+}
+
+.business .section-title::after {
+  margin-left: 0;
+}
+
+.products {
+  padding: 80px 0;
+  background: linear-gradient(180deg, #f5f8fc 0%, #e8f0fe 50%, #f5f8fc 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.products::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -200px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 82, 204, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.products-grid.home-grid {
+  grid-template-columns: repeat(3, 1fr);
+}

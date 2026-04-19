@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="手术室信息控制系统 - 手术室设备与信息一体化管理">
+  <meta name="keywords" content="手术室信息控制,手术室管理,手术室信息化">
+  <title>手术室信息控制系统 - 闻道知白</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/solution-detail.css">
+  <style>
+    .monitor-dashboard{width:100%;background:linear-gradient(135deg,#0f1f5f 0%,#1e3a8f 100%);border-radius:16px;padding:20px;color:#fff;box-shadow:0 10px 40px rgba(0,0,0,.15)}
+    .monitor-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.2)}
+    .monitor-header span:first-child{font-size:14px;font-weight:600;color:#4fc3f7}
+    .status{padding:4px 12px;border-radius:12px;font-size:11px;font-weight:500}
+    .status.warning{background:#ff9800}
+    .status.danger{background:#f44336;animation:pulse 1s infinite}
+    .monitor-vitals{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}
+    .vital{text-align:center;padding:10px;background:rgba(255,255,255,.1);border-radius:8px}
+    .vital .label{font-size:10px;color:rgba(255,255,255,.6);margin-bottom:4px}
+    .vital .value{font-size:20px;font-weight:700}
+    .vital .value.normal{color:#4caf50}
+    .vital .value.warning{color:#ff9800}
+    .vital .value.danger{color:#f44336}
+    .vital .unit{font-size:9px;color:rgba(255,255,255,.5)}
+    .monitor-ecg{background:#0a192f;height:40px;border-radius:8px;margin-bottom:12px;overflow:hidden}
+    .monitor-ecg svg{width:100%;height:100%}
+    .monitor-alerts{display:flex;flex-direction:column;gap:6px}
+    .alert{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:6px;font-size:11px;color:#fff}
+    .alert.warning{background:rgba(255,152,0,.2);border-left:3px solid #ff9800}
+    .alert.danger{background:rgba(244,67,54,.2);border-left:3px solid #f44336}
+    .alert .icon{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff}
+    .alert.warning .icon{background:#ff9800}
+    .alert.danger .icon{background:#f44336}
+  </style>
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="header" id="main-header"></header>
+<script src="../../js/nav-component.js"></script>
+
+<section class="page-banner" style="background-image:url('../../images/solutions-detail/手术室信息控制系统.jpg');background-size:cover;background-position:center"></section>
+
+<div class="breadcrumb" data-title="手术室信息控制系统"></div>
+
+<section class="tech-section">
+  <div class="container">
+    <div class="tech-header">
+      <h2>手术室信息控制系统</h2>
+      <p>对手术排班、HIS、PACS、诊断系统和麻醉五大系统进行全面无缝整合，医护人员通过触摸终端对五大系统进行操作，提高工作效率，使其具备更多的精力照顾患者。</p>
+    </div>
+    <div class="topo-diagram">
+      <div class="topo-container">
+        <svg class="topo-lines" viewBox="0 0 900 400">
+          <path class="topo-line" d="M150,180 Q300,180 405,200"/>
+          <path class="topo-line" d="M495,200 Q600,180 750,180"/>
+          <path class="topo-line" d="M350,250 L200,340"/>
+          <path class="topo-line" d="M550,250 L700,340"/>
+        </svg>
+        <div class="topo-center">
+          <div class="topo-core">
+            <div class="topo-core-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+            <div class="topo-core-title">信息控制平台</div>
+            <div class="topo-core-desc">整合·汇聚·操作</div>
+          </div>
+        </div>
+        <div class="topo-group-label left">业务系统</div>
+        <div class="topo-node left">
+          <div class="topo-node-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.66 9-3V5"/></svg>HIS/PACS/麻醉</div>
+          <div class="topo-node-desc">系统对接·数据汇聚</div>
+        </div>
+        <div class="topo-group-label right">操作端</div>
+        <div class="topo-node right">
+          <div class="topo-node-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>触摸终端</div>
+          <div class="topo-node-desc">一键操作·系统切换</div>
+        </div>
+        <div class="topo-node bottom-left">
+          <div class="topo-node-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>手术排班</div>
+          <div class="topo-node-desc">排班查询·状态更新</div>
+        </div>
+        <div class="topo-node bottom-right">
+          <div class="topo-node-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>大屏显示</div>
+          <div class="topo-node-desc">界面投屏·团队协作</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="module-section">
+  <div class="container">
+    <div class="module-block">
+      <div class="module-content">
+        <span class="module-tag">核心功能</span>
+        <h3>多系统一体化整合</h3>
+        <p>自动采集手术排班、HIS、PACS、诊断系统和麻醉五大系统的UI信息，进行统一汇聚，通过触摸终端和大屏幕提供便捷操作体验。</p>
+        <div class="module-features">
+          <div class="module-feature-item"><div class="check-icon"></div><span>UI信息采集</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>系统汇聚整合</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>触摸终端操作</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>大屏展示</span></div>
+        </div>
+      </div>
+      <div class="module-image"><img loading="lazy" src="../../images/products/手术室集中控制系统-六联板.jpg" alt="手术室集中控制系统"></div>
+    </div>
+    <div class="module-block">
+      <div class="module-content">
+        <span class="module-tag">临床辅助</span>
+        <h3>智能预警系统</h3>
+        <p>基于监护数据智能分析，提供病情恶化预警、异常指标提醒，帮助医护人员及时干预，保障患者安全。</p>
+        <div class="module-features">
+          <div class="module-feature-item"><div class="check-icon"></div><span>病情恶化预警</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>异常指标提醒</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>护理计划建议</span></div>
+          <div class="module-feature-item"><div class="check-icon"></div><span>风险评估</span></div>
+        </div>
+      </div>
+      <div class="module-image">
+        <div class="monitor-dashboard">
+          <div class="monitor-header">
+            <span>智能预警系统</span>
+            <span class="status warning">预警中</span>
+          </div>
+          <div class="monitor-vitals">
+            <div class="vital"><span class="label">心率</span><span class="value normal">78</span><span class="unit">bpm</span></div>
+            <div class="vital"><span class="label">血氧</span><span class="value warning">92</span><span class="unit">%</span></div>
+            <div class="vital"><span class="label">血压</span><span class="value normal">120/80</span><span class="unit">mmHg</span></div>
+            <div class="vital"><span class="label">体温</span><span class="value normal">36.8</span><span class="unit">°C</span></div>
+          </div>
+          <div class="monitor-ecg">
+            <svg viewBox="0 0 200 40" preserveAspectRatio="none">
+              <path d="M0,20 L10,20 L15,20 L18,10 L21,30 L24,5 L27,35 L30,20 L50,20 L70,20 L73,20 L76,10 L79,30 L82,5 L85,35 L88,20 L108,20 L128,20 L131,20 L134,10 L137,30 L140,5 L143,35 L146,20 L166,20 L186,20 L189,20 L192,10 L195,30 L198,5 L200,20" fill="none" stroke="#4caf50" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="monitor-alerts">
+            <div class="alert warning"><span class="icon">!</span>血氧饱和度偏低 (92%)</div>
+            <div class="alert danger"><span class="icon">!</span>病情恶化风险预警</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="scene-video" data-src="../../videos/scenarios/手术室信息控制系统 场景展示.mp4"></div>
+
+<section class="page-nav">
+  <div class="container">
+    <div class="page-nav-inner">
+      <a href="icu-info.html" class="page-nav-item prev"><span class="page-nav-arrow">←</span><div class="page-nav-text"><span class="page-nav-label">上一个</span><span class="page-nav-title">ICU信息管理系统</span></div></a>
+      <a href="telemedicine.html" class="page-nav-item next"><div class="page-nav-text"><span class="page-nav-label">下一个</span><span class="page-nav-title">手术信息管理平台(手麻)</span></div><span class="page-nav-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="products-section">
+  <div class="container">
+    <div class="section-title"><h2>相关产品</h2><p>手术室信息控制系统配套设备</p></div>
+    <div class="products-grid">
+      <div class="product-card"><div class="product-image"><img loading="lazy" src="../../images/products/手术室集中控制系统-六联板.jpg" alt="手术室集中控制系统"></div><h4 class="product-name">手术室集中控制系统</h4></div>
+      <div class="product-card"><div class="product-image"><img loading="lazy" src="../../images/products/手术信息公告屏.jpg" alt="手术信息公告屏"></div><h4 class="product-name">手术信息公告屏</h4></div>
+      <div class="product-card"><div class="product-image"><img loading="lazy" src="../../images/products/手术室门口机.jpg" alt="手术室门口机"></div><h4 class="product-name">手术室门口机</h4></div>
+      <div class="product-card"><div class="product-image"><img loading="lazy" src="../../images/products/示教主控屏.jpg" alt="主控屏"></div><h4 class="product-name">主控屏</h4></div>
+    </div>
+  </div>
+</section>
+
+<div id="main-footer"></div>
+<script src="../../js/footer-component.js"></script>
+<script src="../../js/products-data.js"></script>
+<script src="../../js/cases-data.js"></script>
+<script src="../../js/main.js"></script>
+</body>
+</html>

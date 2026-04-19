@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="闻道知白医院智能化解决方案成功案例详情，了解项目实施与成果。">
+  <title>案例详情 - 闻道知白</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/case-detail.css">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <!-- 导航栏占位 -->
+  <!-- 导航栏 -->
+  <header class="header" id="main-header"></header>
+
+  <!-- Case Header -->
+  <section class="case-header">
+    <div class="banner-slide active" style="background-image: url('../images/cases-banner-1.jpg');"></div>
+    <div class="banner-slide" style="background-image: url('../images/cases-banner-2.png');"></div>
+    <div class="banner-dots">
+      <span class="banner-dot active" data-index="0"></span>
+      <span class="banner-dot" data-index="1"></span>
+    </div>
+    <div class="case-title-area">
+      <h1 id="case-title">案例标题</h1>
+      <p class="subtitle" id="case-subtitle">案例副标题</p>
+      <div class="case-tags" id="case-tags">
+        <!-- 动态生成 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 面包屑导航 -->
+  <div class="case-breadcrumb">
+    <a href="../index.html">首页</a>
+    <span>/</span>
+    <a href="index.html">成功案例</a>
+    <span>/</span>
+    <span id="breadcrumb-title">案例详情</span>
+  </div>
+
+  <!-- Main Content -->
+  <section class="case-content">
+    <div class="container">
+      <div class="case-layout">
+        <!-- Left Content -->
+        <div class="case-main">
+          <!-- Image Slider -->
+          <div class="image-slider" id="image-slider">
+            <div class="slider-main">
+              <img loading="lazy" id="slider-image" src="" alt="案例图片">
+            </div>
+            <div class="slider-dots" id="slider-dots">
+              <!-- 动态生成 -->
+            </div>
+          </div>
+
+          <!-- Background -->
+          <div class="content-section" id="section-background">
+            <h2>项目背景</h2>
+            <p id="case-background"></p>
+          </div>
+
+          <!-- Solutions -->
+          <div class="content-section" id="section-solutions">
+            <h2>解决方案</h2>
+            <div class="solutions-grid" id="solutions-grid">
+              <!-- 动态生成 -->
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <div class="case-nav">
+            <a href="#" id="prev-case" class="disabled">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+              </svg>
+              上一个案例
+            </a>
+            <a href="#" id="next-case" class="disabled">
+              下一个案例
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="case-sidebar">
+          <div class="sidebar-card">
+            <h3>项目信息</h3>
+            <ul class="info-list" id="info-list">
+              <!-- 动态生成 -->
+            </ul>
+          </div>
+
+          <div class="sidebar-card">
+            <a href="../contact/index.html" class="cta-btn">
+              咨询报价
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-left: 5px;">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>相关解决方案</h3>
+            <ul class="related-list" id="related-list">
+              <!-- 动态生成 -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="main-footer"></div>
+<script src="../js/footer-component.js"></script>
+
+  <script src="../js/nav-component.js"></script>
+  <script src="../js/products-data.js"></script>
+  <script src="../js/cases-data.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/case-detail-page.js"></script>
+</body>
+</html>

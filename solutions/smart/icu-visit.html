@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ICU探视对讲系统 - 为ICU病房提供专业的远程视频探视解决方案">
+  <meta name="keywords" content="ICU探视,ICU对讲,视频探视,远程探视">
+  <title>ICU探视对讲系统 - 闻道知白</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/solution-detail.css">
+  <style>
+    .topo-center{top:30%}
+    .topo-node.left{left:80px;top:auto;bottom:40px}
+    .topo-node.right{right:80px;top:auto;bottom:40px}
+    .topo-node.top{left:50%;transform:translateX(-50%);top:auto;bottom:40px}
+    .topo-group-label.left{left:80px;top:auto;bottom:160px}
+    .topo-group-label.right{right:80px;top:auto;bottom:160px}
+  </style>
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<header class="header" id="main-header"></header>
+<script src="../../js/nav-component.js"></script>
+
+<section class="page-banner" style="background-image: url('../../images/solutions-detail/ICU探视对讲系统.jpg'); background-size: cover; background-position: center;">
+</section>
+
+<div class="breadcrumb" data-title="ICU探视对讲系统"></div>
+
+<!-- 系统介绍 -->
+<section class="tech-section">
+  <div class="container">
+    <div class="tech-header">
+      <h2>ICU探视对讲系统</h2>
+      <p>适用于ICU重病房病人与家属之间的探视对讲，也可适用于其它需要隔离探视对讲场所。通过可视对讲、录音录像、远程探视等功能，既满足家属探视需求，又有效控制感染风险。</p>
+    </div>
+
+    <!-- 系统拓扑图 -->
+    <div class="topo-diagram">
+      <div class="topo-container">
+        <!-- 连接线 -->
+        <svg class="topo-lines" viewBox="0 0 900 400">
+          <path class="topo-line left" d="M180,340 Q300,270 405,250"/>
+          <path class="topo-line right" d="M495,250 Q600,270 720,340"/>
+          <path class="topo-line" d="M450,250 L450,340"/>
+        </svg>
+
+        <!-- 中心节点 - 护士站主机 -->
+        <div class="topo-center">
+          <div class="topo-core">
+            <div class="topo-core-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <path d="M8 21h8M12 17v4"/>
+              </svg>
+            </div>
+            <div class="topo-core-title">护士站主机</div>
+            <div class="topo-core-desc">转接·控制·管理</div>
+          </div>
+        </div>
+
+        <!-- 左侧 - 探视分机 -->
+        <div class="topo-group-label left">探视区</div>
+        <div class="topo-node left">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            探视分机
+          </div>
+          <div class="topo-node-desc">家属探视终端<br>一键呼叫</div>
+        </div>
+
+        <!-- 右侧 - 病床分机 -->
+        <div class="topo-group-label right">病房区</div>
+        <div class="topo-node right">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            病床分机
+          </div>
+          <div class="topo-node-desc">ICU病床终端<br>可视对讲</div>
+        </div>
+
+        <!-- 上方 - 录播服务器 -->
+        <div class="topo-node top">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.66 9-3V5"/></svg>
+            录播服务器
+          </div>
+          <div class="topo-node-desc">录音录像·云存储</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 功能模块 -->
+<section class="module-section">
+  <div class="container">
+    <div class="module-block">
+      <div class="module-content">
+        <span class="module-tag">核心功能</span>
+        <h3>可视对讲与转接</h3>
+        <p>探视分机、病床分机自带摄像头，支持双向可视对讲。家属呼叫后由护士站主机转接至病床分机，实现安全有序的探视流程。</p>
+        <div class="module-features">
+          <div class="module-feature-item">
+            <div class="check-icon"></div>
+            <span>双向可视对讲</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon"></div>
+            <span>护士站转接</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon"></div>
+            <span>一键式呼叫</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon"></div>
+            <span>切断通话控制</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-image">
+        <img loading="lazy" src="../../images/products/ICU探视分机.jpg" alt="ICU探视分机">
+      </div>
+    </div>
+
+    <div class="module-block">
+      <div class="module-content">
+        <span class="module-tag">安全管控</span>
+        <h3>录音录像与远程探视</h3>
+        <p>系统支持对通话过程进行录音录像，记录呼叫、通话时间。VA探视系统提供远程探视功能，授权家属可随时随地探访患者。</p>
+        <div class="module-features">
+          <div class="module-feature-item">
+            <div class="check-icon"></div>
+            <span>全程录音录像</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon"></div>
+            <span>远程VA探视</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon"></div>
+            <span>人脸识别门禁</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon"></div>
+            <span>云存储管理</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-image">
+        <img loading="lazy" src="../../images/products/ICU病床分机.jpg" alt="ICU病床分机">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="scene-video" data-src="../../videos/scenarios/ICU探视对讲系统场景展示.mp4"></div>
+
+<!-- 页面导航 -->
+<section class="page-nav">
+  <div class="container">
+    <div class="page-nav-inner">
+      <a href="digital-or.html" class="page-nav-item prev">
+        <span class="page-nav-arrow">←</span>
+        <div class="page-nav-text">
+          <span class="page-nav-label">上一个</span>
+          <span class="page-nav-title">数字化手术系统</span>
+        </div>
+      </a>
+      <a href="mobile-visit.html" class="page-nav-item next">
+        <div class="page-nav-text">
+          <span class="page-nav-label">下一个</span>
+          <span class="page-nav-title">移动探视对讲系统</span>
+        </div>
+        <span class="page-nav-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="products-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>相关产品</h2>
+      <p>ICU探视对讲系统配套设备</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-image"><img loading="lazy" src="../../images/products/ICU探视分机.jpg" alt="ICU探视分机"></div>
+        <h4 class="product-name">ICU探视分机</h4>
+      </div>
+      <div class="product-card">
+        <div class="product-image"><img loading="lazy" src="../../images/products/ICU病床分机.jpg" alt="ICU病床分机"></div>
+        <h4 class="product-name">ICU病床分机</h4>
+      </div>
+      <div class="product-card">
+        <div class="product-image"><img loading="lazy" src="../../images/products/移动探视推车.jpg" alt="移动探视推车"></div>
+        <h4 class="product-name">移动探视推车</h4>
+      </div>
+      <div class="product-card">
+        <div class="product-image"><img loading="lazy" src="../../images/products/录播服务器.jpg" alt="录播服务器"></div>
+        <h4 class="product-name">录播服务器</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="main-footer"></div>
+<script src="../../js/footer-component.js"></script>
+
+<script src="../../js/products-data.js"></script>
+<script src="../../js/cases-data.js"></script>
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

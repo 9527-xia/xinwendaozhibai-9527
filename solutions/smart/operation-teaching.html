@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="手术示教系统 - 高清手术示教系统，支持实时转播、录制存储">
+  <meta name="keywords" content="手术示教,手术直播,医学教育,手术转播">
+  <title>手术示教系统 - 闻道知白</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/solution-detail.css">
+  <style>
+    .topo-diagram{max-width:1000px}
+    .topo-container{min-height:420px}
+    .topo-group-label.left{left:60px;top:20px}
+    .topo-group-label.right{right:60px;top:20px}
+    .topo-group-label.bottom{left:50%;transform:translateX(-50%);bottom:-30px}
+    .feature-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;max-width:1200px;margin:0 auto}
+    @media(max-width:992px){.feature-cards{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:576px){.feature-cards{grid-template-columns:1fr}}
+    .feature-card{background:white;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:var(--transition)}
+    .feature-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-hover)}
+    .feature-card-image{height:220px;overflow:hidden;background:var(--bg-main)}
+    .feature-card-image img{width:100%;height:100%;object-fit:contain;padding:20px;transition:transform 0.3s ease}
+    .feature-card:hover .feature-card-image img{transform:scale(1.05)}
+    .feature-card-content{padding:24px}
+    .feature-card-content h4{font-size:18px;font-weight:600;color:var(--text-dark);margin-bottom:8px}
+    .feature-card-content p{font-size:14px;color:var(--text-gray);line-height:1.7;margin:0}
+  </style>
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<header class="header" id="main-header"></header>
+<script src="../../js/nav-component.js"></script>
+
+
+<section class="page-banner" style="background-image: url('../../images/solutions-detail/手术示教系统.jpg'); background-size: cover; background-position: center;">
+</section>
+
+<div class="breadcrumb" data-title="手术示教系统"></div>
+
+<!-- 系统介绍 -->
+<section class="tech-section">
+  <div class="container">
+    <div class="tech-header">
+      <h2>手术示教系统</h2>
+      <p>外科手术技术正在不断的变化和发展，医院手术示教系统功能强大且操作简单，对手术的全部过程进行实时的录制和采集，为重大手术提供取证依据，成为建设数字化手术室的必备系统。</p>
+    </div>
+
+    <!-- 系统拓扑图 -->
+    <div class="topo-diagram">
+      <div class="topo-container">
+        <!-- 连接线 -->
+        <svg class="topo-lines" viewBox="0 0 1000 420">
+          <!-- 输入端连线 -->
+          <path class="topo-line input" d="M160,110 Q300,110 410,140" />
+          <path class="topo-line input" d="M200,225 Q350,225 410,140" />
+          <path class="topo-line input" d="M160,340 Q300,340 410,140" />
+          <!-- 输出端连线 -->
+          <path class="topo-line output" d="M590,140 Q700,110 840,110" />
+          <path class="topo-line output" d="M590,140 Q650,225 800,225" />
+          <path class="topo-line output" d="M590,140 Q700,340 840,340" />
+          <!-- 存储连线 -->
+          <path class="topo-line" d="M500,230 L500,380" />
+        </svg>
+
+        <!-- 中心核心节点 -->
+        <div class="topo-center">
+          <div class="topo-core">
+            <div class="topo-core-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <path d="M8 21h8M12 17v4"/>
+              </svg>
+            </div>
+            <div class="topo-core-title">流媒体服务器</div>
+            <div class="topo-core-desc">核心控制中枢</div>
+          </div>
+        </div>
+
+        <!-- 输入端 - 采集设备 -->
+        <div class="topo-group-label left">采集端</div>
+        <div class="topo-node input-1">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            4K术野摄像机
+          </div>
+          <div class="topo-node-desc">超高清手术创口采集</div>
+        </div>
+        <div class="topo-node input-2">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            全景摄像机
+          </div>
+          <div class="topo-node-desc">手术室全景画面</div>
+        </div>
+        <div class="topo-node input-3">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 2v20M17 2v20M2 12h20M2 7h5M2 17h5M17 7h5M17 17h5"/></svg>
+            医疗影像设备
+          </div>
+          <div class="topo-node-desc">内窥镜/超声/DSA</div>
+        </div>
+
+        <!-- 输出端 - 显示设备 -->
+        <div class="topo-group-label right">显示端</div>
+        <div class="topo-node output-1">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            示教大屏
+          </div>
+          <div class="topo-node-desc">示教室/会议室终端</div>
+        </div>
+        <div class="topo-node output-2">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+            移动终端
+          </div>
+          <div class="topo-node-desc">平板/手机远程观摩</div>
+        </div>
+        <div class="topo-node output-3">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            远程会诊
+          </div>
+          <div class="topo-node-desc">异地专家在线观看</div>
+        </div>
+
+        <!-- 存储端 -->
+        <div class="topo-group-label bottom">存储端</div>
+        <div class="topo-node storage">
+          <div class="topo-node-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.66 9-3V5"/></svg>
+            IP-SAN 存储
+          </div>
+          <div class="topo-node-desc">手术录像智能归档 · 快速检索回放</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 图像采集模块 -->
+<section class="module-section">
+  <div class="container">
+    <div class="module-block">
+      <div class="module-content">
+        <span class="module-tag">第一步 · 图像采集</span>
+        <h3>4K超高清采集</h3>
+        <p>通过多台高清摄像设备，全方位采集手术室内的图像信号，包括手术创口细节、手术室全景、医疗仪器画面等，确保手术过程完整记录。</p>
+        <div class="module-features">
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>4K医用术野摄像机</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>全景摄像机</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>医疗影像设备接入</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>多路信号同步采集</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-image">
+        <div class="module-image-grid">
+          <img loading="lazy" src="../../images/products/手术示教4K医用术野摄像机.jpg" alt="4K术野摄像机">
+          <img loading="lazy" src="../../images/products/手术示教全景摄像机.jpg" alt="全景摄像机">
+        </div>
+      </div>
+    </div>
+
+    <div class="module-block">
+      <div class="module-content">
+        <span class="module-tag">第二步 · 信号处理</span>
+        <h3>编码传输</h3>
+        <p>通过编码服务器对多路视音频信号进行数字化编码处理，转换为IP网络可传输的数字信号，实现高质量、低延迟的信号传输。</p>
+        <div class="module-features">
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>H.265高效编码</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>超低延迟传输</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>IP网络传输</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>多路信号同步</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-image">
+        <img loading="lazy" src="../../images/products/示教编码服务器.jpg" alt="编码服务器">
+      </div>
+    </div>
+
+    <div class="module-block">
+      <div class="module-content">
+        <span class="module-tag">第三步 · 存储管理</span>
+        <h3>中心控制</h3>
+        <p>流媒体服务器与IP-SAN存储设备协同工作，实现手术全程录制、存储管理、权限控制，支持历史回放和按需点播功能。</p>
+        <div class="module-features">
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>流媒体服务器</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>IP-SAN存储</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>权限分级管理</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>历史回放点播</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-image">
+        <img loading="lazy" src="../../images/products/录播服务器.jpg" alt="流媒体服务器">
+      </div>
+    </div>
+
+    <div class="module-block">
+      <div class="module-content">
+        <span class="module-tag">第四步 · 示教输出</span>
+        <h3>多端显示</h3>
+        <p>通过解码服务器将数字信号还原为高清视频，在大屏显示终端实时呈现，支持多路画面同屏显示、画中画等功能。</p>
+        <div class="module-features">
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>高清解码输出</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>多路画面同屏</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>画中画显示</span>
+          </div>
+          <div class="module-feature-item">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            </div>
+            <span>大屏终端适配</span>
+          </div>
+        </div>
+      </div>
+      <div class="module-image">
+        <img loading="lazy" src="../../images/products/示教解码服务器.jpg" alt="解码服务器">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="scene-video" data-src="../../videos/scenarios/手术示教系统 场景展示.mp4"></div>
+
+<!-- 页面导航 -->
+<section class="page-nav">
+  <div class="container">
+    <div class="page-nav-inner">
+      <a href="mobile-teaching.html" class="page-nav-item prev">
+        <span class="page-nav-arrow">←</span>
+        <div class="page-nav-text">
+          <span class="page-nav-label">上一个</span>
+          <span class="page-nav-title">移动示教系统</span>
+        </div>
+      </a>
+      <a href="behavior.html" class="page-nav-item next">
+        <div class="page-nav-text">
+          <span class="page-nav-label">下一个</span>
+          <span class="page-nav-title">排队叫号系统</span>
+        </div>
+        <span class="page-nav-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="products-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>相关产品</h2>
+      <p>手术示教系统配套设备</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-image"><img loading="lazy" src="../../images/products/手术示教4K医用术野摄像机.jpg" alt="4K术野摄像机"></div>
+        <h4 class="product-name">4K术野摄像机</h4>
+      </div>
+      <div class="product-card">
+        <div class="product-image"><img loading="lazy" src="../../images/products/手术示教全景摄像机.jpg" alt="全景摄像机"></div>
+        <h4 class="product-name">全景摄像机</h4>
+      </div>
+      <div class="product-card">
+        <div class="product-image"><img loading="lazy" src="../../images/products/示教编码服务器.jpg" alt="编码服务器"></div>
+        <h4 class="product-name">编码服务器</h4>
+      </div>
+      <div class="product-card">
+        <div class="product-image"><img loading="lazy" src="../../images/products/示教解码服务器.jpg" alt="解码服务器"></div>
+        <h4 class="product-name">解码服务器</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="main-footer"></div>
+<script src="../../js/footer-component.js"></script>
+
+<script src="../../js/products-data.js"></script>
+<script src="../../js/cases-data.js"></script>
+<script src="../../js/main.js"></script>
+</body>
+</html>
